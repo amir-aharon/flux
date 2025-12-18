@@ -73,6 +73,16 @@ func (c *Cache[K, V]) Get(k K) (V, bool) {
 	return node.Value, true
 }
 
+func (c *Cache[K, V]) Remove(k K) {
+	c.mu.Lock()
+	defer c.mu.Unlock()
+
+	if node, exists := c.KV[k]; exists {
+		c.removeNode(node)
+		delete(c.KV, k)
+	}
+}
+
 func (c *Cache[K, V]) addToMRU(node *Node[K, V]) {
 	if c.MRU == nil {
 		c.MRU = node
