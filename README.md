@@ -8,10 +8,13 @@ Each module in Flux is a self-contained study in system design, built with zero 
 
 ## Modules
 
-| Module    | Name         | Pattern          | Status   | Description                                                                  |
-| :-------- | :----------- | :--------------- | :------- | :--------------------------------------------------------------------------- |
-| **Tempo** | Rate Limiter | `Token Bucket`   | ✅ Ready | A middleware for throttling API traffic and preventing DoS attacks.          |
-| **Swarm** | Worker Pool  | `Fan-Out/Fan-In` | ✅ Ready | A concurrency engine for processing massive job queues with fixed resources. |
+| Module    | Name            | Pattern          | Status   | Description                                                                           |
+| --------- | --------------- | ---------------- | -------- | ------------------------------------------------------------------------------------- |
+| **Tempo** | Rate Limiter    | `Token Bucket`   | ✅ Ready | A middleware for throttling API traffic and preventing DoS attacks.                   |
+| **Swarm** | Worker Pool     | `Fan-Out/Fan-In` | ✅ Ready | A concurrency engine for processing massive job queues with fixed resources.          |
+| **Echo**  | Pub/Sub Broker  | `Observer`       | ✅ Ready | A generic, thread-safe message broadcasting system for decoupled communication.       |
+| **Fuse**  | Circuit Breaker | `State Machine`  | ✅ Ready | A resilience wrapper that prevents cascading failures by failing fast during outages. |
+| **Zen**   | Load Balancer   | `Reverse Proxy`  | ✅ Ready | A Layer 7 HTTP traffic distributor using Round-Robin strategy.                        |
 
 ## Philosophy
 
